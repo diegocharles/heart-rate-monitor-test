@@ -7,3 +7,31 @@ one:
 two:
   user: two
   duration_in_secs: 1
+
+# HrmSession fixtures
+short_session:
+  user: test_user
+  duration_in_secs: 300
+  min_bpm: 80
+  max_bpm: 150
+  avg_bpm: 120
+  created_at: <%= 1.hour.ago %>
+  updated_at: <%= 1.hour.ago %>
+
+long_session:
+  user: test_user
+  duration_in_secs: 3600
+  min_bpm: 70
+  max_bpm: 180
+  avg_bpm: 140
+  created_at: <%= 1.day.ago %>
+  updated_at: <%= 1.day.ago %>
+
+intense_session:
+  user: test_user
+  duration_in_secs: 1800
+  min_bpm: 100
+  max_bpm: 190
+  avg_bpm: 160
+  created_at: <%= 2.days.ago %>
+  updated_at: <%= 2.days.ago %>

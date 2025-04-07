@@ -13,3 +13,48 @@ two:
   reading_start_time: 2025-04-07 15:30:42
   reading_end_time: 2025-04-07 15:30:42
   duration_in_secs: 1
+
+# HrmDataPoint fixtures for short_session
+short_session_point1:
+  hrm_session: short_session
+  beats_per_minute: 80
+  duration_in_secs: 60
+  created_at: <%= 1.hour.ago %>
+  updated_at: <%= 1.hour.ago %>
+
+short_session_point2:
+  hrm_session: short_session
+  beats_per_minute: 150
+  duration_in_secs: 60
+  created_at: <%= 1.hour.ago %>
+  updated_at: <%= 1.hour.ago %>
+
+# HrmDataPoint fixtures for long_session
+long_session_point1:
+  hrm_session: long_session
+  beats_per_minute: 70
+  duration_in_secs: 300
+  created_at: <%= 1.day.ago %>
+  updated_at: <%= 1.day.ago %>
+
+long_session_point2:
+  hrm_session: long_session
+  beats_per_minute: 180
+  duration_in_secs: 300
+  created_at: <%= 1.day.ago %>
+  updated_at: <%= 1.day.ago %>
+
+# HrmDataPoint fixtures for intense_session
+intense_session_point1:
+  hrm_session: intense_session
+  beats_per_minute: 100
+  duration_in_secs: 300
+  created_at: <%= 2.days.ago %>
+  updated_at: <%= 2.days.ago %>
+
+intense_session_point2:
+  hrm_session: intense_session
+  beats_per_minute: 190
+  duration_in_secs: 300
+  created_at: <%= 2.days.ago %>
+  updated_at: <%= 2.days.ago %>

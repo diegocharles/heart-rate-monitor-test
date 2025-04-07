@@ -25,3 +25,19 @@ two:
   hr_zone3_bpm_max: 1
   hr_zone4_bpm_min: 1
   hr_zone4_bpm_max: 1
+
+# User fixtures
+test_user:
+  username: test_user
+  gender: male
+  age: 30
+  hr_zone1_bpm_min: 0
+  hr_zone1_bpm_max: 120
+  hr_zone2_bpm_min: 121
+  hr_zone2_bpm_max: 140
+  hr_zone3_bpm_min: 141
+  hr_zone3_bpm_max: 160
+  hr_zone4_bpm_min: 161
+  hr_zone4_bpm_max: 180
+  created_at: <%= Time.current %>
+  updated_at: <%= Time.current %>

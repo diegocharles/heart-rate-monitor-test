@@ -31,6 +31,13 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_07_153042) do
     t.integer "duration_in_secs"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "min_bpm"
+    t.integer "max_bpm"
+    t.integer "avg_bpm"
+    t.integer "hrm_data_points_count", default: 0, null: false
+    t.index ["avg_bpm"], name: "index_hrm_sessions_on_avg_bpm"
+    t.index ["max_bpm"], name: "index_hrm_sessions_on_max_bpm"
+    t.index ["min_bpm"], name: "index_hrm_sessions_on_min_bpm"
     t.index ["user_id"], name: "index_hrm_sessions_on_user_id"
   end
 
@@ -48,6 +55,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_07_153042) do
     t.integer "hr_zone4_bpm_max"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "hrm_sessions_count", default: 0, null: false
   end
 
   add_foreign_key "hrm_data_points", "hrm_sessions"
