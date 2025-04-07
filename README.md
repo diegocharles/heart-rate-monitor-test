@@ -1,3 +1,44 @@
+
+# How to start it:
+
+1. Using DockerContainer
+
+  Just make sure you have VSCode or Cursor installed on your development machine,
+
+## Using DevContainer for Rails Development
+
+### Prerequisites
+- [Docker](https://www.docker.com/products/docker-desktop) installed on your machine
+- [Visual Studio Code](https://code.visualstudio.com/) or [Cursor](https://cursor.sh/) installed
+- [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension installed in VS Code
+
+### Getting Started
+
+1. Clone this repository to your local machine
+2. Open the project folder in VS Code or Cursor
+3. When prompted, click "Reopen in Container" or use the command palette (F1) and select "Remote-Containers: Reopen in Container"
+4. The first build may take a few minutes as it downloads and sets up the Rails environment
+5. Once the container is running, you can access the Rails application at http://localhost:3000
+
+### Container Features
+- Ruby and Rails configured for this specific project
+- SQLite3 database
+- Pre-configured development environment without JavaScript dependencies
+
+### Common Commands
+- Start the Rails server: `rails s -b 0.0.0.0`
+- Run database migrations: `rails db:migrate`
+- Access the Rails console: `rails c`
+- Run tests: `rails test`
+
+### Troubleshooting
+If you encounter any issues with the DevContainer:
+- Rebuild the container: Command Palette → "Remote-Containers: Rebuild Container"
+- Check Docker is running properly on your host machine
+- Verify port 3000 is not in use by another application
+
+
+
 # Code Test
 
 This document outlines a programming evaluation which will test your ability to put together a simple full-stack Rails application. There are a few core components that you will be expected to implement, and some room for your own approach to tackling the problem. The estimated time required for this test is 3 hours.
