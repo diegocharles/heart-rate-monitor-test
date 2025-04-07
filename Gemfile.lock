@@ -192,6 +192,7 @@ GEM
     parser (3.3.7.4)
       ast (~> 2.4.1)
       racc
+    pg (1.5.9)
     pp (0.6.2)
       prettyprint
     prettyprint (0.2.0)
@@ -250,6 +251,10 @@ GEM
     rake (13.2.1)
     rdoc (6.13.1)
       psych (>= 4.0.0)
+    redis (5.4.0)
+      redis-client (>= 0.22.0)
+    redis-client (0.24.0)
+      connection_pool
     regexp_parser (2.10.0)
     reline (0.6.1)
       io-console (~> 0.5)
@@ -370,9 +375,11 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   kamal
+  pg (~> 1.1)
   propshaft
   puma (>= 5.0)
   rails (~> 8.0.1)
+  redis (>= 4.0.1)
   rubocop-rails-omakase
   selenium-webdriver
   solid_cache

@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[8.0].define(version: 2025_04_07_153042) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "pg_catalog.plpgsql"
+
   create_table "hrm_data_points", force: :cascade do |t|
     t.integer "hrm_session_id", null: false
     t.integer "beats_per_minute"

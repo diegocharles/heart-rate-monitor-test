@@ -2,7 +2,7 @@
 service: heart_rate_monitor
 
 # Name of the container image.
-image: your-user/heart_rate_monitor
+image: diegocharles/heart_rate_monitor
 
 # Deploy to these servers.
 servers:
@@ -19,13 +19,13 @@ servers:
 # Note: If using Cloudflare, set encryption mode in SSL/TLS setting to "Full" to enable CF-to-app encryption.
 proxy:
   ssl: true
-  host: app.example.com
+  host: diegocharles.dev
 
 # Credentials for your image host.
 registry:
   # Specify the registry server, if you're not using Docker Hub
   # server: registry.digitalocean.com / ghcr.io / ...
-  username: your-user
+  username: diegocharles
 
   # Always use an access token rather than real password when possible.
   password:
@@ -83,9 +83,9 @@ builder:
   # # Pass arguments and secrets to the Docker build process
   # args:
   #   RUBY_VERSION: ruby-3.4.1
-  # secrets:
+  secrets:
   #   - GITHUB_TOKEN
-  #   - RAILS_MASTER_KEY
+    - RAILS_MASTER_KEY
 
 # Use a different ssh user than root
 # ssh:
@@ -93,21 +93,19 @@ builder:
 
 # Use accessory services (secrets come from .kamal/secrets).
 # accessories:
-#   db:
-#     image: mysql:8.0
-#     host: 192.168.0.2
-#     # Change to 3306 to expose port to the world instead of just local network.
-#     port: "127.0.0.1:3306:3306"
-#     env:
-#       clear:
-#         MYSQL_ROOT_HOST: '%'
-#       secret:
-#         - MYSQL_ROOT_PASSWORD
-#     files:
-#       - config/mysql/production.cnf:/etc/mysql/my.cnf
-#       - db/production.sql:/docker-entrypoint-initdb.d/setup.sql
-#     directories:
-#       - data:/var/lib/mysql
+#   accessories:
+  db:
+    image: postgres:17.3
+    host: 192.168.0.1
+    port: 5432
+    env:
+      secret:
+        - POSTGRES_PASSWORD
+    files:
+      - db/production.sql:/docker-entrypoint-initdb.d/setup.sql
+    directories:
+      - data:/var/lib/postgresql/data
+
 #   redis:
 #     image: redis:7.0
 #     host: 192.168.0.2
