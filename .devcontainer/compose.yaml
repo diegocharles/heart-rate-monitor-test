@@ -10,14 +10,15 @@ services:
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
     depends_on:
-      - db
+      - postgres
     # Uncomment the next line to use a non-root user for all processes.
     # user: vscode
 
-  db:
+  postgres:
     image: postgres:16.1
     restart: always
     environment:
+      POSTGRES_HOST: localhost
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: heart_rate_monitor_development
